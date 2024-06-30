@@ -28,5 +28,5 @@ function getStudentGrade() {
     alert(`The grade for marks ${marks} is ${grade}.`);
 }
 
-// Call the function to test it
+
 getStudentGrade();
