@@ -1,11 +1,10 @@
-// Function to calculate NSSF deduction
+
 function calculateNSSF(grossSalary) {
     const tier1 = Math.min(grossSalary, 7000) * 0.06;
     const tier2 = Math.max(0, Math.min(grossSalary - 7000, 29000)) * 0.06;
     return tier1 + tier2;
 }
 
-// Function to calculate NHIF deduction
 function calculateNHIF(grossSalary) {
     const nhifBands = [
         [5999, 150], [7999, 300], [11999, 400], [14999, 500],
@@ -22,7 +21,6 @@ function calculateNHIF(grossSalary) {
     return 0;
 }
 
-// Function to calculate PAYE (tax)
 function calculatePAYE(taxableIncome) {
     const taxBands = [
         [24000, 0.1], [32333, 0.25], [500000, 0.3], [800000, 0.325], [Infinity, 0.35]
@@ -40,7 +38,6 @@ function calculatePAYE(taxableIncome) {
     return tax;
 }
 
-// Function to calculate net salary
 function calculateNetSalary(basicSalary, benefits) {
     const grossSalary = basicSalary + benefits;
     const nssf = calculateNSSF(grossSalary);
@@ -58,9 +55,8 @@ function calculateNetSalary(basicSalary, benefits) {
     };
 }
 
-// Example usage
-const basicSalary = 50000;
-const benefits = 10000;
+const basicSalary = 200000;
+const benefits = 60000;
 const netSalaryDetails = calculateNetSalary(basicSalary, benefits);
 
 console.log(`Gross Salary: ${netSalaryDetails.grossSalary}`);
